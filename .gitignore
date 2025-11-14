@@ -68,6 +68,18 @@ Desktop.ini
 *.sqlite
 *.sqlite3
 
+# Zip files and archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Temporary build/script files
+temp-*
+*-submission.zip
+create-zip.sh
+
 # Misc
 .vercel
 .netlify
