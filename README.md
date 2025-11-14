@@ -612,15 +612,28 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 To create a clean zip file for submission (excluding `node_modules` and other unnecessary files):
 
+**Using zip command:**
 ```bash
-# Make the script executable (if not already)
-chmod +x create-zip.sh
-
-# Run the script
-./create-zip.sh
+zip -r Reviewly-submission.zip . \
+  -x "node_modules/*" \
+  -x ".git/*" \
+  -x "*.zip" \
+  -x "dist/*" \
+  -x "build/*" \
+  -x ".env*" \
+  -x "*.log" \
+  -x ".DS_Store"
 ```
 
-This will create `Reviewly-submission.zip` (~0.13 MB) containing only the source code and necessary files.
+**Or manually exclude these directories/files:**
+- `node_modules/` (both backend and frontend)
+- `.git/`
+- `dist/` and `build/` directories
+- `.env` files
+- Log files
+- Any zip files
+
+This will create a zip file (~0.13 MB) containing only the source code and necessary files.
 
 **Note**: Recipients will need to run `npm install` in both `backend/` and `frontend/` directories after extracting.
 
